@@ -76,11 +76,11 @@ body.st{
 }
 
 .st #cont{
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 
     width: 1200px;
     height: 500px;
-    background: #2a2a2a;
+
 }
 
 .st .bag{
@@ -268,15 +268,15 @@ body.st{
 
 
 #table{
-    position: relative;
-    width: 229px;
-    height: 343px;
-    background: #686868;
-    left: 88px;
-    top: 40px;
-    float: left;
-    padding: 3px;
-    border: 12px solid #515151;
+    /*position: relative;*/
+    /*width: 229px;*/
+    /*height: 343px;*/
+    /*background: #686868;*/
+    /*left: 88px;*/
+    /*top: 40px;*/
+    /*float: left;*/
+    /*padding: 3px;*/
+    /*border: 12px solid #515151;*/
 }
 
 
@@ -293,8 +293,22 @@ th, td {
 
 
 
+#content{
+    display: flex;
+    justify-content: space-around;
+}
+
+#table{
+    width: 200px;
+    mso-border-color-alt: #0dcaf0;
+}
 
 
+#table2{
+    width: 200px;
+    height: 30px;
+    mso-border-color-alt: #0dcaf0;
+}
 
 
 
