@@ -12,6 +12,8 @@ function draw(){
     let gX = 0;
     let gY = 0;
 
+    let mixes = 0;
+
     let licznikLeftVal = document.getElementById('licznik-left-val');
     let licznikRightVal = document.getElementById('licznik-right-val');
 
@@ -27,7 +29,24 @@ function draw(){
         // console.log('mor', mr);
         // if (mr < .5){  return 0; }
         // if (mr >= .5){  return 1; }
-      return Math.random()<0.5?1:0
+        mixes++;
+
+        if(mixes > 30000){
+            mixes = 0;
+        }
+        console.log("mixes", mixes);
+
+        if(mixes % 2 === 0){
+            console.log('parzyste')
+            return Math.random()<0.5?1:0
+
+
+        }else{
+            console.log('nieparzyste');
+            return Math.random()<0.5?0:1
+        }
+
+
 
     }
 
