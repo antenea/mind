@@ -53,6 +53,10 @@
 
 
 
+
+
+
+
 body.st{
     margin: 0;
     padding: 0;
@@ -65,21 +69,14 @@ body.st{
     width: 100vw;
 }
 
-.st #head{
-    height: 150px;
-    background: #73796d;
-    height: 150px;
-    background: #73796d;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
+
 
 .st #cont{
     /*margin: 0 auto;*/
 
     width: 1200px;
     height: 500px;
+    margin-bottom: 50px;
 
 }
 
@@ -145,9 +142,7 @@ body.st{
 #licznik{
     position: relative;
     width: 300px;
-    height: 100px;
     float: left;
-
 }
 
 #licznik h2{
@@ -194,10 +189,11 @@ body.st{
 
 #indicator{
     position: relative;
-    top: 20px;
+    top: 1px;
     width: 1000px;
     height: 100px;
     /*background: #8ab4ff;*/
+    padding-bottom: 5px;
 }
 
 #indicator-container-left{
@@ -219,9 +215,7 @@ body.st{
 
 
 
-
 #indicator-left{
-    /*position: absolute;*/
     background: teal;
     height: 100%;
     width: 0;
@@ -234,8 +228,6 @@ body.st{
     float: left;
     width: 0;
 }
-
-
 
 
 .left{
@@ -252,9 +244,9 @@ body.st{
 
 
 #counting-green{
-    width: 360px;
-    height: 60px;
-    border: 1px solid navajowhite;
+    width: 300px;
+    height: 128px;
+    display: none;
 }
 #counting-d{
 
@@ -262,24 +254,28 @@ body.st{
 #counting-right{
 
 }
-
-
-
-
-
-#table{
-    /*position: relative;*/
-    /*width: 229px;*/
-    /*height: 343px;*/
-    /*background: #686868;*/
-    /*left: 88px;*/
-    /*top: 40px;*/
-    /*float: left;*/
-    /*padding: 3px;*/
-    /*border: 12px solid #515151;*/
+.st #head {
+    background: #73796d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 
+#content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    top: 50px;
+
+}
+#table2{
+    display: none;
+}
 
 table, th, td {
     border: 1px solid black;
@@ -289,31 +285,56 @@ th, td {
     padding: 5px;
     text-align: left;
 }
+@media (min-width: 1600px) {
+    #content{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: normal;
+        top: 20px;
+    }
 
 
+    #table2{
+        display: block;
+    }
+    .st #head{
+        background: #73796d;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
 
 
-#content{
-    display: flex;
-    justify-content: space-around;
+    #counting-green {
+        width: 0;
+        height: 128px;
+        display: block;
+    }
 }
 
-#table{
+
+
+
+.table{
     width: 200px;
     mso-border-color-alt: #0dcaf0;
+    position: relative;
+    top: 20px;
+    height: 100px;
+
 }
 
 
-#table2{
-    width: 200px;
-    height: 30px;
-    mso-border-color-alt: #0dcaf0;
+
+
+
+
+@media (max-width: 1450px) {
+
 }
-
-
-
-
-
 
 
 
