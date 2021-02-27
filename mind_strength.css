@@ -247,6 +247,7 @@ body.st{
     width: 300px;
     height: 128px;
     display: none;
+    position: relative;
 }
 #counting-d{
 
@@ -309,9 +310,11 @@ th, td {
 
 
     #counting-green {
+        position: relative;
         width: 0;
         height: 128px;
         display: block;
+        left: 150px;
     }
 }
 

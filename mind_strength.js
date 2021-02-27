@@ -27,7 +27,7 @@ function draw(){
         // console.log('mor', mr);
         // if (mr < .5){  return 0; }
         // if (mr >= .5){  return 1; }
-      return Math.random()<0.5?0:1
+      return Math.random()<0.5?1:0
 
     }
 
