@@ -11,6 +11,7 @@ function draw(){
 
     let gX = 0;
     let gY = 0;
+    let is_start = false;
 
     let mixes = 0;
 
@@ -107,6 +108,7 @@ function draw(){
 
 
     function clearInit(){
+
         var cr = document.getElementById("red");
         var ctxr = cr.getContext("2d");
         ctxr.clearRect(0, 0, 900, 800);
@@ -120,15 +122,6 @@ function draw(){
         ctxf.clearRect(0, 0, 900, 800);
     }
 
-
-    // function counting(){
-    //
-    //     for (let x = 0; x < 3; x++) {
-    //         setTimeout(function(y) {
-    //
-    //         }, x * timer, x);
-    //     }
-    // }
 
 
 
@@ -168,6 +161,9 @@ function draw(){
 
 
     function aiInit(){
+        if (is_start) return;
+        is_start = true;
+
         let timese = 2000;
 
         aiClear();
@@ -178,9 +174,6 @@ function draw(){
 
             }, x * timese, x);
         }
-
-
-
     }
 
 
@@ -190,7 +183,6 @@ function draw(){
         ctx.beginPath();
         ctx.arc(30, 30, 30, 0, 2 * Math.PI);
         ctx.stroke();
-
         ctx.fillStyle = "red";
         ctx.fill();
     }
@@ -201,7 +193,6 @@ function draw(){
         ctx.beginPath();
         ctx.arc(30, 30, 30, 0, 2 * Math.PI);
         ctx.stroke();
-
         ctx.fillStyle = "yellow";
         ctx.fill();
     }
@@ -212,10 +203,8 @@ function draw(){
         ctx.beginPath();
         ctx.arc(30, 30, 30, 0, 2 * Math.PI);
         ctx.stroke();
-
         ctx.fillStyle = "green";
         ctx.fill();
-
     }
 
 
@@ -223,16 +212,10 @@ function draw(){
         aiStart();
     }
 
-
-
     function runRadnom(){
 
         if(getRandomMonet()){
             valueX++;
-
-
-
-
             let x = getRandomX();
             let y = getRandomY();
             left(x, y, radius);
@@ -245,25 +228,12 @@ function draw(){
 
         licznikLeftVal.innerHTML = `${valueX}`;
         licznikRightVal.innerHTML = `${valueY}`;
-
         indicator(valueX, valueY);
-
-
-
     }
 
 
     function indicator(x, y){
-        // let indicatorLeft = document.getElementById('indicator-left');
-        // let indicatorRight = document.getElementById('indicator-right');
-          console.log('-------------------')
-         console.log('x_',x);
-         console.log('y_',y);
-
-
-
         let result = parseInt((x - y), 10);
-        console.log('result', result)
 
         if (result === 0){
             dxl = 0;
@@ -271,42 +241,26 @@ function draw(){
         }
 
         if (result>0){
-
             dx = result;
             dxl = Math.log(dx + 1) * 10;
             console.log('dxl', dxl);
         }
 
         if (result<0){
-
             dy = - result;
             dyl = Math.log(dy + 1) * 10;
             console.log('dyl', dyl);
         }
 
-
-
-
         indicatorLeft.style.width = `${dxl}%`;
         indicatorRight.style.width = `${dyl}%`;
-
-
         gX = x;
         gY = y;
-        // console.dir(indicatorLeft);
-
     }
 
 
 
-
-
     function left(x, y, radius){
-
-        // let x = 40;
-        // let y = 140;
-        // let radius = 40;
-
         x += 50;
         y += 50;
 
@@ -330,29 +284,17 @@ function draw(){
         ctx.beginPath();
         ctx.arc(x, y, radius, 0, 2 * Math.PI);
         ctx.stroke();
-
         ctx.fillStyle = "#8a790075";
         ctx.fill();
-
-
     }
 
 
     function viewTable(){
         let td_green = document.getElementById('td_green');
         let td_yellow = document.getElementById('td_yellow');
-
         td_green.innerText = getVictoryX();
         td_yellow.innerText = getVictoryY();
-
-
     }
-
-
-
-    // addVictoryX();
-   console.log('vx',localStorage.getItem("vx"))
-   console.log('vy',localStorage.getItem("vy"))
 
 
     function endProcess(){
@@ -368,8 +310,7 @@ function draw(){
         }
 
         viewTable();
-
-
+        is_start = false;
     }
 
 
@@ -391,17 +332,9 @@ function draw(){
 
 
     function aiReset(){
-        // localStorage.removeItem('vx');
-        // localStorage.removeItem('vy');
-
         localStorage.setItem('vx' , "0");
         localStorage.setItem('vy' , "0");
-
         viewTable();
     }
-
-
-    console.log('vx',localStorage.getItem("vx"))
-    console.log('vy',localStorage.getItem("vy"))
 
 }
