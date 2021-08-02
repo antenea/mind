@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="mind_strength.css" />
+    <script src="MCL/mcl.js"></script>
+    <link rel="stylesheet" href="public/css/basic.css">
+    <script src="translatar/translatar.js"></script>
+    <script src="translatar/lang.js"></script>
+    <link rel="stylesheet" href="translatar/lang.css">
+    <script src="translatar/storage.js"></script>
+
+</head>
+<body class="mind" onload="draw();" >
+<div id="main">
+
+    <div id="navbar" class="content-header" >
+        <div class="container-max header-b ">
+
+            <div class="ai-logo">
+                <h1>
+                    <a class="parent-center-h" href="https://antenea.github.io/smiles/">
+                        <img class="center-h" src="img/antenea.png" alt="antenea">
+                    </a>
+                </h1>
+            </div>
+
+
+
+            <div class="d-flex">
+
+                <div class=" membar  language-switch">
+                    <div style="display: flex">
+                        <span class="__t t__02 " data-id="t__02">Language</span>
+                        <div id="btn-lang" class="" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <div class="flages" ><img id="actual-language" src="img/flags/en.png" width="23" alt="image" />  </div>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-menu  dropdown-menu-end show" style="" data-popper-placement="bottom-end">
+                        <div id="flag-colombia"  data-lang ="co"  title="Colombia"  class="flags  padding-left-20" ><img src="img/flags/co.png" width="23" />Colombia</div>
+                        <div id="flag-poland"    data-lang ="pl"  title="Poland"    class="flags  padding-left-20" ><img src="img/flags/pl.png" width="23" />Poland</div>
+                        <div id="flag-russia"    data-lang ="ru"  title="Russia"    class="flags  padding-left-20" ><img src="img/flags/ru.png" width="23" />Russia</div>
+                        <div id="flag-spain"     data-lang ="es"  title="Spain"     class="flags  padding-left-20" ><img src="img/flags/es.png" width="23" alt="spain"/>Spain</div>
+                        <div id="flag-english"   data-lang ="en"  title="English"   class="flags  padding-left-20" ><img src="img/flags/en.png" width="23" alt="spain"/>English</div>
+
+
+
+                    </div>
+                </div>
+
+
+                <div class=" membar d-inline-block">
+                    <div class="caButton js-btn" data-id="mcl-license"    ><i class="far fa-address-card"></i><span data-t="tlic">License</span></div>
+                </div>
+
+
+                <div class=" membar d-inline-block">
+                    <div id="modal-config" class="caButton js-btn" data-id="mcl-instruction"   ><i class="fa fa-cog" aria-hidden="true"></i><span data-t="tinstr">Instruction</span></div>
+
+                </div>
+                <div class=" membar d-inline-block">
+                    <div id="modal-config1" class="caButton js-btn" data-id="mcl-config"    ><i class="fa fa-cog" aria-hidden="true"></i><span data-t="tabout">About</span></div>
+
+                </div>
+
+
+                <div class=" membar d-inline-block">
+                    <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                        &nbsp; &nbsp;
+                    </button>
+                </div>
+
+
+
+            </div>
+        </div>
+</div>
+
+    <section id="head">
+
+        <div id="licznik">
+           <div id="licznik-left">
+               <h2 id="licznik-left-val"></h2>
+           </div>
+            <div id="licznik-d">
+                <h2 >:</h2>
+            </div>
+
+           <div id="licznik-right">
+               <h2 id="licznik-right-val"></h2>
+           </div>
+
+        </div>
+        <div id="center">
+
+
+
+            <div id="indicator-container">
+                <div id="indicator" >
+                    <div id="indicator-container-left">
+                        <div id="indicator-left">
+                        </div>
+                    </div>
+                    <div id="indicator-container-right">
+                        <div id="indicator-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="counting">
+
+            <div id="counting-green" class="left">
+                <canvas id="red"  class="left" width="60" height="60"></canvas>
+                <canvas id="yellow"  class="left" width="60" height="60"></canvas>
+                <canvas id="green"  class="left" width="60" height="60"></canvas>
+
+            </div>
+
+            <div id="counting-yellow" class="left">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="head2">
+        <div id="head3">
+            <button id="reset" class="btn secundary">Reset</button>
+
+
+            <button id="pause" class="btn secundary">Pause</button>
+<!--            <button id="stop" class="btn primary">Stop</button>-->
+
+            <button id="start" class="btn btn-primary">Start</button> &nbsp;&nbsp;
+
+
+            <span>
+                 <label for="scales">Revert</label>
+                <input type="checkbox" id="scales" name="checkbox"       >
+
+            </span>&nbsp;&nbsp;
+
+
+            <span>
+                 <label for="advacend">Advanced</label>
+                <input type="checkbox" id="advacend" name="advacend"       >
+
+            </span>
+
+
+
+        </div>
+
+
+    </section>
+
+
+    <section id="checko">
+
+
+
+
+    </section>
+
+
+
+    <section id="content" >
+
+        <div id="table" class="table">
+
+            <table style="width:100%">
+                <tr>   <th>Green</th>                               <th>Yellow</th>           </tr>
+                <tr>  <td id="td_green">0</td>    <td id="td_yellow">0</td>   </tr>
+            </table>
+        </div>
+
+
+        <div id="cont">
+            <div class="bag" >
+                <div id="le">
+                    <canvas id="leCanvas" width="600" height="500"></canvas>
+                </div>
+                <div id="ri">
+                    <canvas id="riCanvas" width="600" height="500" >
+                        Your browser does not support the HTML5 canvas tag.</canvas>
+                </div>
+            </div>
+        </div>
+
+        <div id="table2" class="table">
+
+        </div>
+
+    </section>
+</div>
+
+
+<script src="mind_strength.js"></script>
+</body>
+</html>

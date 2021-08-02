@@ -1,0 +1,116 @@
+
+
+
+#navbar{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #0000004d;
+    background: #0000006e;
+    width: 100%;
+    top: 0;
+}
+
+
+.caButton {
+    border: 1px solid teal;
+    border-radius: 13px;
+    padding: 1px 10px;
+}
+
+
+.ai-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 200px; */
+    /* border: 3px solid green; */
+}
+
+.header-b {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    padding-right:  0.75rem;
+    padding-left:  0.75rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.language-switch {
+
+    font-size: 14px;
+    position: relative;
+    top: -3px;
+
+}
+
+.membar.language-switch {
+    padding-top: 9px;
+}
+
+
+.js-btn{
+    cursor: pointer;
+}
+
+.membar{
+    /*padding: 0 9px;*/
+    display: inline-block;
+    padding: 0 7px;
+}
+
+.flages {
+    padding: 0 12px;
+    position: relative;
+    top: -2px;
+    cursor: pointer;
+}
+.flags img {
+    transform: scale(1);
+    transition: all .4s;
+    box-shadow: 2px 2px 5px #0000004d;
+    margin-right: 12px;
+}
+.flages img{
+    padding-top: 4px;
+}
+
+.dropdown-menu {
+
+
+    z-index: 1000;
+    display: none;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: 0;
+    font-size: .9rem;
+
+    text-align: left;
+    list-style: none;
+    background-clip: padding-box;
+    border: 0 solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+
+    /*-webkit-box-shadow: 0 2px 4px rgb(15 34 58 / 12%);*/
+    /*box-shadow: 0 2px 4px rgb(15 34 58 / 12%);*/
+    -webkit-animation-name: DropDownSlide;
+    animation-name: DropDownSlide;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    margin: 0;
+    position: absolute;
+    z-index: 1000;
+    left: auto!important;
+    /* right: 0!important; */
+    color: #ffffff;
+    background-image: linear-gradient(151deg, #1f2f0bd6, #3fbe49);
+    box-shadow: 4px 7px 9px #0000006b;
+    padding: 10px 2px 10px 17px;
+    margin: 0px;
+    position: absolute;
+    inset: 0px auto auto 0px;
+    transform: translate(1px, 45px);
+}
