@@ -21,15 +21,15 @@ function draw(){
     let indicatorLeft = document.getElementById('indicator-left');
     let indicatorRight = document.getElementById('indicator-right');
     viewTable();
+    this.table2  = document.getElementById("table2").innerHTML
 
     licznikLeftVal.innerHTML = "0"; // harmless in this case
     licznikRightVal.innerHTML = "0"; // harmless in this case
 
     function getRandomMonet() {
-        // let mr = Math.random();
-        // if (mr < .5){  return 0; }
-        // if (mr >= .5){  return 1; }
+
         mixes++;
+
 
         if (mixes === 1){
             document.getElementById("table2").innerHTML = "Start";
@@ -70,6 +70,26 @@ function draw(){
     }
 
     function getRandomMonet2(){
+        mixes++;
+
+        if (mixes === 1){
+            document.getElementById("table2").innerHTML = "Start";
+        }
+
+        window.addEventListener('mousemove', randomMouse, false  )
+
+        if(mixes > 30000){
+            window.removeEventListener('mousemove', randomMouse, false  )
+            return false;
+        }
+        if (mixes === number){
+            // alert("End GAme Process");
+            document.getElementById("table2").innerHTML = "End Process Games";
+            window.removeEventListener('mousemove', randomMouse, false  )
+            return;
+        }
+
+
         const revert = getRevert();
         if (revert === "off"){
             return Math.random() < 0.5 ? 1 : 0
@@ -100,13 +120,11 @@ function draw(){
                 console.log("Advacend is not checked..");
             }
         });
-
-
     }
 
 
-
     revert();
+
     function revert(){
         let checkboxe = document.querySelector("input[name=checkbox]");
         let r = getRevert();
@@ -136,6 +154,7 @@ function draw(){
     }
 
     function randomMouse(e){
+
         x = e.offsetX;
         y = e.offsetY;
         let coor = "X: " + x + ", Y: " + y;
@@ -155,7 +174,6 @@ function draw(){
    pause.addEventListener('click', function (){
        alert('Pause');
    });
-
 
 
     function aiClear(){
@@ -182,7 +200,6 @@ function draw(){
 
         indicatorLeft.style.width = "0";
         indicatorRight.style.width = "0";
-
     }
 
 
@@ -205,14 +222,8 @@ function draw(){
 
 
 
-
-
-
     function aiStart(){
 
-      let self = this;
-
-        // aiInit();
        radius = 30;
        for (let i = 0; i < number; i++) {
             setTimeout(function() {
@@ -228,7 +239,6 @@ function draw(){
     function aiStop(){
         alert('stop');
     }
-
 
 
     function aiInit(){
@@ -250,6 +260,7 @@ function draw(){
 
 
     function init1(){
+        document.getElementById("table2").innerHTML = "3";
         var c = document.getElementById("red");
         var ctx = c.getContext("2d");
         ctx.beginPath();
@@ -260,6 +271,7 @@ function draw(){
     }
 
     function init2(){
+        document.getElementById("table2").innerHTML = "2";
         var c = document.getElementById("yellow");
         var ctx = c.getContext("2d");
         ctx.beginPath();
@@ -270,6 +282,7 @@ function draw(){
     }
 
     function init3(){
+        document.getElementById("table2").innerHTML = "1";
         var c = document.getElementById("green");
         var ctx = c.getContext("2d");
         ctx.beginPath();
@@ -281,6 +294,7 @@ function draw(){
 
 
     function init4(){
+        // document.getElementById("table2").innerHTML = "Start";
         aiStart();
     }
 
@@ -290,7 +304,6 @@ function draw(){
     function runRadnom(){
 
         let ga = getAdvacend();
-
 
         if (ga === 'on'){
             if(! getRandomMonet()){
@@ -318,8 +331,6 @@ function draw(){
                 right(x, y, radius);
             }
         }
-
-
 
         licznikLeftVal.innerHTML = `${valueX}`;
         licznikRightVal.innerHTML = `${valueY}`;
@@ -390,10 +401,6 @@ function draw(){
     }
 
 
-
-
-
-
     function endProcess(){
         clearInit();
 
@@ -411,9 +418,6 @@ function draw(){
     }
 
 
-
-
-
     function setAdvacend(revert){
         localStorage["advacend"] = revert;
     }
@@ -422,7 +426,6 @@ function draw(){
         return localStorage.getItem("advacend") ;
     }
 
-
     function setRevert(revert){
         localStorage["revert"] = revert;
     }
@@ -430,7 +433,6 @@ function draw(){
     function getRevert(){
         return localStorage.getItem("revert") ;
     }
-
 
     function addVictoryX(){
         localStorage["vx"] = (parseInt(localStorage["vx"]) || 0) + 1;
