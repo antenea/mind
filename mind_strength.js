@@ -373,7 +373,7 @@ function draw(){
         ctx2.beginPath();
         ctx2.arc(x, y, radius, 0, Math.PI * 2);
         ctx2.stroke();
-        ctx2.fillStyle = "#007e8a75";
+        ctx2.fillStyle = "#008e8a75";
         ctx2.fill();
     }
 
